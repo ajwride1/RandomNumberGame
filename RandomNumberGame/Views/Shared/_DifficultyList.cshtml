@@ -1,0 +1,6 @@
+﻿@using RandomNumberGame.Models
+
+@Html.DropDownList("SelectDifficulty", 
+      new SelectList(Enum.GetValues(typeof(Enums.DifficultyLevel))),
+      "Select a difficulty...",
+      new { @class = "form-control" })

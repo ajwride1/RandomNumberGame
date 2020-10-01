@@ -1,10 +1,13 @@
 ﻿namespace RandomNumberGame.Models
 {
-    public enum Difficulties
+    public class Enums
     {
-        Easy,
-        Medium,
-        Hard,
-        Impossible
+        public enum DifficultyLevel
+        {
+            Easy,
+            Medium,
+            Hard,
+            Impossible
+        }
     }
 }
