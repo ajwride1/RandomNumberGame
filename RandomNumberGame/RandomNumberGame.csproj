@@ -128,6 +128,7 @@
     <Compile Include="Models\Easy.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\Factory.cs" />
+    <Compile Include="Models\Game.cs" />
     <Compile Include="Models\Hard.cs" />
     <Compile Include="Models\Impossible.cs" />
     <Compile Include="Models\Medium.cs" />

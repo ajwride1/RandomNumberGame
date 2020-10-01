@@ -28,7 +28,7 @@ namespace RandomNumberGame.Controllers
             return View();
         }
 
-        public ActionResult StartGame(FormCollection collection)
+        public ActionResult Game(FormCollection collection)
         {
             if (collection["select-difficulty"] == null)
                 throw new Exception("We cannot find a selected difficulty so we've sent you back to the home page");
@@ -37,9 +37,9 @@ namespace RandomNumberGame.Controllers
 
             Enum.TryParse(selectedDifficulty, true, out Enums.DifficultyLevel difficultyLevel);
 
-            Difficulty difficulty = Factory.GetDifficulty(difficultyLevel);
+            Models.Game newGame = new Game(difficultyLevel);
 
-            return View();
+            return View(newGame);
         }
     }
 }
