@@ -10,10 +10,6 @@
 <div class="row">
     <div class="col-md-12">
         <p>Select a difficulty then press start to start a new game!</p>
-        @using (Html.BeginForm("Game", "Home"))
-        {
-            @Html.Partial("_DifficultyList")
-            <input type="submit" value="Start" />
-        }
+        @Html.Partial("_DifficultyList")
     </div>
 </div>

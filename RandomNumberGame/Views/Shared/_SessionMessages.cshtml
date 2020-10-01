@@ -1,0 +1,22 @@
+﻿@if (Session["error"] != null)
+{
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="alert alert-danger">@Session["error"]</p>
+        </div>
+    </div>
+}
+
+@if (Session["success"] != null)
+{
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="alert alert-success">@Session["success"]</p>
+        </div>
+    </div>
+}
+
+@{
+    Session["error"] = null;
+    Session["success"] = null;
+}

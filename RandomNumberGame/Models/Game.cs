@@ -20,6 +20,8 @@ namespace RandomNumberGame.Models
 
             Random rnd = new Random();
             _randomNumber = rnd.Next(Difficulty.LowerLimit, Difficulty.UpperLimit);
+
+            CurrentMessage = $"Start by making a guess between {Difficulty.LowerLimit} and {Difficulty.UpperLimit}";
         }
 
         public void MakeGuess(int guess)

@@ -2,4 +2,21 @@
 
 <h2>You are playing on @Model.Difficulty.Name difficulty level</h2>
 <h2>You currently have @Model.GuessesLeft guesses left</h2>
+<h2>The lowest possible number for this game is @Model.Difficulty.LowerLimit</h2>
+<h2>The highest possible number for this game is @Model.Difficulty.UpperLimit</h2>
 
+<h1>@Model.CurrentMessage</h1>
+
+@if (Model.Complete)
+{
+    Session["CurrentGame"] = null;
+    @Html.Partial("_DifficultyList")
+}
+else
+{
+    using (Html.BeginForm("MakeGuess", "Home"))
+    {
+        @Html.TextBox("guess", "", new { @class = "col-sm-4 form-control" })
+        <input type="submit" value="Make Guess" />
+    }
+}
