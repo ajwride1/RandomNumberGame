@@ -124,6 +124,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Difficulty.cs" />
+    <Compile Include="Models\Easy.cs" />
+    <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\Hard.cs" />
+    <Compile Include="Models\Impossible.cs" />
+    <Compile Include="Models\Medium.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -165,7 +171,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
