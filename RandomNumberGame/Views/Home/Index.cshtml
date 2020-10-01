@@ -9,7 +9,11 @@
 
 <div class="row">
     <div class="col-md-12">
-        <p>To start, let's select a difficulty</p>
-        @Html.Partial("_DifficultyList")
+        <p>Select a difficulty then press start to start a new game!</p>
+        @using (Html.BeginForm("StartGame", "Home"))
+        {
+            @Html.Partial("_DifficultyList")
+            <input type="submit" value="Start" />
+        }
     </div>
 </div>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RandomNumberGame.Models;
 
 namespace RandomNumberGame.Controllers
 {
@@ -23,6 +24,20 @@ namespace RandomNumberGame.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult StartGame(FormCollection collection)
+        {
+            if (collection["select-difficulty"] == null)
+                throw new Exception("We cannot find a selected difficulty so we've sent you back to the home page");
+
+            string selectedDifficulty = collection["select-difficulty"];
+
+            Enum.TryParse(selectedDifficulty, true, out Enums.DifficultyLevel difficultyLevel);
+
+            Difficulty difficulty = Factory.GetDifficulty(difficultyLevel);
 
             return View();
         }
