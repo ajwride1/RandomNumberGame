@@ -32,7 +32,15 @@ namespace RandomNumberGame.Models
 
             if (_randomNumber == guess)
             {
-                CurrentMessage = $"Congratulations! You got it right with {GuessesLeft} guesses left!";
+                if (GuessesLeft == 1)
+                {
+                    CurrentMessage = $"Congratulations! You got it right with {GuessesLeft} guess left!";
+                }
+                else
+                {
+                    CurrentMessage = $"Congratulations! You got it right with {GuessesLeft} guesses left!";
+                }
+
                 Complete = true;
                 _successful();
             }
