@@ -12,6 +12,7 @@ namespace RandomNumberGame.Models
                 case Enums.DifficultyLevel.Hard: return new Hard();
                 case Enums.DifficultyLevel.Medium: return new Medium();
                 case Enums.DifficultyLevel.Impossible: return new Impossible();
+                case Enums.DifficultyLevel.GodLike: return new GodLike();
                 default:
                     throw new Exception($"Unfortunately, we cannot find the difficulty matching the selection {difficultyLevel.ToString()}");
             }

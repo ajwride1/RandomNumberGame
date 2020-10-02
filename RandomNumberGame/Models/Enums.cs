@@ -7,7 +7,8 @@
             Easy,
             Medium,
             Hard,
-            Impossible
+            Impossible,
+            GodLike
         }
     }
 }

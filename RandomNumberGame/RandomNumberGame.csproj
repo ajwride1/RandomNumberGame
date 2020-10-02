@@ -129,6 +129,7 @@
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\Factory.cs" />
     <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\GodLike.cs" />
     <Compile Include="Models\Hard.cs" />
     <Compile Include="Models\Impossible.cs" />
     <Compile Include="Models\Medium.cs" />
@@ -167,8 +168,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_DifficultyList.cshtml" />
     <Content Include="Views\Home\Game.cshtml" />

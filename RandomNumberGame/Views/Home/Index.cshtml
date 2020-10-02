@@ -2,14 +2,18 @@
     ViewBag.Title = "Home Page";
 }
 
+@{
+    Session["CurrentGame"] = null;
+}
+
 <div class="jumbotron">
     <h1>Adam's Random Number Game!</h1>
     <p class="lead">Welcome to Adam's random number game, have fun and good luck!</p>
-</div>
-
-<div class="row">
-    <div class="col-md-12">
-        <p>Select a difficulty then press start to start a new game!</p>
-        @Html.Partial("_DifficultyList")
+    <div class="row">
+        <div class="col-md-12">
+            <p>Select a difficulty then press start to start a new game!</p>
+            @Html.Partial("_DifficultyList")
+        </div>
     </div>
 </div>
+

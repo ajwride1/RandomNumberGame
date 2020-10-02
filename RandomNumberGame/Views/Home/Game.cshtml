@@ -3,7 +3,16 @@
 <div class="row">
     <div class="col-sm-12 alert alert-info">
         <p class="">You are playing on @Model.Difficulty.Name difficulty level</p>
-        <p class="">You currently have @Model.GuessesLeft guesses left</p>
+
+        @if (Model.GuessesLeft == 1)
+        {
+            <p class="">You currently have <strong>@Model.GuessesLeft</strong> guess left</p>
+        }
+        else
+        {
+            <p class="">You currently have <strong>@Model.GuessesLeft</strong> guesses left</p>
+        }
+
         <p class="">The lowest possible number for this game is @Model.Difficulty.LowerLimit</p>
         <p class="">The highest possible number for this game is @Model.Difficulty.UpperLimit</p>
     </div>
@@ -12,24 +21,24 @@
 @if (Model.Success)
 {
     <div class="row">
-        <div class="col-sm-12">
-            <p class="alert alert-success">@Model.CurrentMessage</p>
+        <div class="col-sm-12 alert alert-success">
+            <p>@Model.CurrentMessage</p>
         </div>
     </div>
 }
 else if (Model.Failure)
 {
-    <div class="row">
+    <div class="row alert alert-danger">
         <div class="col-sm-12">
-            <p class="alert alert-danger">@Model.CurrentMessage</p>
+            <p>@Model.CurrentMessage</p>
         </div>
     </div>
 }
 else
 {
-    <div class="row">
+    <div class="row alert alert-info">
         <div class="col-sm-12">
-            <p class="alert alert-info">@Model.CurrentMessage</p>
+            <p>@Model.CurrentMessage</p>
         </div>
     </div>
 }

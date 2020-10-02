@@ -28,40 +28,54 @@ namespace RandomNumberGame.Models
 
         public void MakeGuess(int guess)
         {
-            GuessesLeft--;
-
-            if (_randomNumber == guess)
+            if (guess > Difficulty.UpperLimit)
             {
-                if (GuessesLeft == 1)
-                {
-                    CurrentMessage = $"Congratulations! You got it right with {GuessesLeft} guess left!";
-                }
-                else
-                {
-                    CurrentMessage = $"Congratulations! You got it right with {GuessesLeft} guesses left!";
-                }
-
-                Complete = true;
-                _successful();
+                CurrentMessage =
+                    $"Your guess {guess} is too high for the upper limit of {Difficulty.UpperLimit}, please try again with a guess between {Difficulty.LowerLimit} and {Difficulty.UpperLimit}";
+            }
+            else if (guess < Difficulty.LowerLimit)
+            {
+                CurrentMessage =
+                    $"Your guess {guess} is too low for the lower limit of {Difficulty.LowerLimit}, please try again with a guess between {Difficulty.LowerLimit} and {Difficulty.UpperLimit}";
             }
             else
             {
-                if (_randomNumber > guess)
+                GuessesLeft--;
+
+                if (_randomNumber == guess)
                 {
-                    CurrentMessage = $"Too low! Try again!";
-                    _failed();
+                    if (GuessesLeft == 1)
+                    {
+                        CurrentMessage = $"Congratulations! You got it right with {GuessesLeft} guess left!";
+                    }
+                    else
+                    {
+                        CurrentMessage = $"Congratulations! You got it right with {GuessesLeft} guesses left!";
+                    }
+
+                    Complete = true;
+                    _successful();
                 }
                 else
                 {
-                    CurrentMessage = "Too high! Try again!";
-                    _failed();
-                }
+                    if (_randomNumber > guess)
+                    {
+                        CurrentMessage = $"Too low! Try again!";
+                        _failed();
+                    }
+                    else
+                    {
+                        CurrentMessage = "Too high! Try again!";
+                        _failed();
+                    }
 
-                if (GuessesLeft <= 0)
-                {
-                    CurrentMessage = "You are out of guesses, better luck next time!";
-                    Complete = true;
-                    _failed();
+                    if (GuessesLeft <= 0)
+                    {
+                        CurrentMessage =
+                            $"You are out of guesses, better luck next time! The correct number was {_randomNumber}";
+                        Complete = true;
+                        _failed();
+                    }
                 }
             }
         }
