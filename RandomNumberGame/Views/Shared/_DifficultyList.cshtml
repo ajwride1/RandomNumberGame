@@ -2,11 +2,13 @@
 
 @using (Html.BeginForm("Game", "Home"))
 {
-    @Html.DropDownList("select-difficulty", 
-        new SelectList(Enum.GetValues(typeof(Enums.DifficultyLevel))),
-        "Select a difficulty...",
-        new { @class = "form-control" })
-    <input type="submit" value="Start" />
+    <div class="row">
+        @Html.DropDownList("select-difficulty",
+            new SelectList(Enum.GetValues(typeof(Enums.DifficultyLevel))),
+            "Select a difficulty...",
+            new {@class = "form-control"})
+        <input type="submit" class="btn btn-info" value="Start"/>
+    </div>
 }
 
 

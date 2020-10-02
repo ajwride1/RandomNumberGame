@@ -43,7 +43,9 @@ else
 {
     using (Html.BeginForm("MakeGuess", "Home"))
     {
-        @Html.TextBox("guess", "", new { @class = "col-sm-4 form-control" })
-        <input type="submit" value="Make Guess" />
+        <div class="row">
+            @Html.TextBox("guess", "", new {@class = "col-sm-4 form-control"})
+            <input type="submit" class="btn btn-info" value="Make Guess"/>
+        </div>
     }
 }
