@@ -1,11 +1,38 @@
 ﻿@model RandomNumberGame.Models.Game
 
-<h2>You are playing on @Model.Difficulty.Name difficulty level</h2>
-<h2>You currently have @Model.GuessesLeft guesses left</h2>
-<h2>The lowest possible number for this game is @Model.Difficulty.LowerLimit</h2>
-<h2>The highest possible number for this game is @Model.Difficulty.UpperLimit</h2>
+<div class="row">
+    <div class="col-sm-12 alert alert-info">
+        <p class="">You are playing on @Model.Difficulty.Name difficulty level</p>
+        <p class="">You currently have @Model.GuessesLeft guesses left</p>
+        <p class="">The lowest possible number for this game is @Model.Difficulty.LowerLimit</p>
+        <p class="">The highest possible number for this game is @Model.Difficulty.UpperLimit</p>
+    </div>
+</div>
 
-<h1>@Model.CurrentMessage</h1>
+@if (Model.Success)
+{
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="alert alert-success">@Model.CurrentMessage</p>
+        </div>
+    </div>
+}
+else if (Model.Failure)
+{
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="alert alert-danger">@Model.CurrentMessage</p>
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="alert alert-info">@Model.CurrentMessage</p>
+        </div>
+    </div>
+}
 
 @if (Model.Complete)
 {

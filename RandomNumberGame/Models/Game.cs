@@ -8,6 +8,8 @@ namespace RandomNumberGame.Models
         public int GuessesLeft { get; set; }
         public string CurrentMessage { get; set; }
         public bool Complete { get; set; }
+        public bool Success { get; set; }
+        public bool Failure { get; set; }
         
         private int _randomNumber;
 
@@ -30,26 +32,42 @@ namespace RandomNumberGame.Models
 
             if (_randomNumber == guess)
             {
-                CurrentMessage = $"Congratulations! You got it right with {GuessesLeft}!";
+                CurrentMessage = $"Congratulations! You got it right with {GuessesLeft} guesses left!";
                 Complete = true;
+                _successful();
             }
             else
             {
                 if (_randomNumber > guess)
                 {
                     CurrentMessage = $"Too low! Try again!";
+                    _failed();
                 }
                 else
                 {
                     CurrentMessage = "Too high! Try again!";
+                    _failed();
                 }
 
                 if (GuessesLeft <= 0)
                 {
                     CurrentMessage = "You are out of guesses, better luck next time!";
                     Complete = true;
+                    _failed();
                 }
             }
+        }
+
+        private void _failed()
+        {
+            Success = false;
+            Failure = true;
+        }
+
+        private void _successful()
+        {
+            Success = true;
+            Failure = false;
         }
     }
 }
