@@ -3,24 +3,24 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Adam's Random Number Game</title>
+    <title>@ViewBag.Title - Random Number Game</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                @Html.ActionLink("Random Number Game", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            @Html.ActionLink("Random Number Game", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         </div>
-    </nav>
-    <div class="container body-content">
+    </div>
+</nav>
+<div class="container body-content">
         @Html.Partial("_SessionMessages")
         @RenderBody()
         <hr/>
         <footer>
-            <p>&copy; @DateTime.Now.Year - Adam's Random Number Game</p>
+            <p>&copy; @DateTime.Now.Year - WrideTechSolutions</p>
         </footer>
     </div>
 
