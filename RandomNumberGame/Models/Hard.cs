@@ -7,7 +7,7 @@
             Name = "Hard";
             AllowedGuesses = 5;
             LowerLimit = 1;
-            UpperLimit = 1000;
+            UpperLimit = 100;
         }
     }
 }

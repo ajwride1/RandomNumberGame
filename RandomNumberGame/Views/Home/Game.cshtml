@@ -2,19 +2,18 @@
 
 <div class="row">
     <div class="col-sm-12 alert alert-info">
-        <p class="">You are playing on @Model.Difficulty.Name difficulty level</p>
+        <p>You are playing on @Model.Difficulty.Name difficulty level</p>
 
         @if (Model.GuessesLeft == 1)
         {
-            <p class="">You currently have <strong>@Model.GuessesLeft</strong> guess left</p>
+            <p>You currently have <strong>@Model.GuessesLeft</strong> guess left</p>
         }
         else
         {
-            <p class="">You currently have <strong>@Model.GuessesLeft</strong> guesses left</p>
+            <p>You currently have <strong>@Model.GuessesLeft</strong> guesses left</p>
         }
 
-        <p class="">The lowest possible number for this game is @Model.Difficulty.LowerLimit</p>
-        <p class="">The highest possible number for this game is @Model.Difficulty.UpperLimit</p>
+        <p>A random number has been picked between @Model.Difficulty.LowerLimit and @Model.Difficulty.UpperLimit</p>
     </div>
 </div>
 
